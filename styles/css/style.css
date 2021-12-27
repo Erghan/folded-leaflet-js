@@ -26,6 +26,7 @@ body {
   font-family: "Poppins", sans-serif;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
+  overflow-x: hidden;
   -webkit-perspective: 1400px;
           perspective: 1400px;
 }
@@ -84,12 +85,10 @@ body {
           transform: rotateY(180deg);
 }
 #flyer .volet.left {
-  z-index: 3;
   -webkit-transform-origin: left;
           transform-origin: left;
 }
 #flyer .volet.center {
-  z-index: 1;
   -webkit-box-shadow: 0 45px 50px -10px rgba(0, 0, 0, 0.7);
           box-shadow: 0 45px 50px -10px rgba(0, 0, 0, 0.7);
   -webkit-transition: -webkit-box-shadow ease 1.3s, -webkit-transform ease 1s;
@@ -98,64 +97,38 @@ body {
   transition: box-shadow ease 1.3s, transform ease 1s, -webkit-box-shadow ease 1.3s, -webkit-transform ease 1s;
 }
 #flyer .volet.right {
-  z-index: 2;
   -webkit-transform-origin: right;
           transform-origin: right;
 }
-@-webkit-keyframes touchButton {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 600%;
-  }
-}
-@keyframes touchButton {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 600%;
-  }
-}
-#flyer .touch {
-  z-index: 99;
+
+.conseil {
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: absolute;
-  width: 40px;
-  height: 40px;
-  pointer-events: none;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
 }
-#flyer .touch::before {
-  z-index: -1;
-  content: "";
-  display: block;
-  position: absolute;
-  aspect-ratio: 1/1;
-  top: 50%;
-  left: 50%;
-  width: 0%;
-  background: radial-gradient(rgba(90, 190, 255, 0.7) 30%, transparent 70%);
-  border-radius: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  -webkit-animation: touchButton infinite ease-out 2s;
-          animation: touchButton infinite ease-out 2s;
+.conseil p + p {
+  margin-top: 20px;
 }
-#flyer .touch::after {
-  z-index: -1;
-  content: "";
-  display: block;
-  position: absolute;
-  aspect-ratio: 1/1;
-  top: 50%;
-  left: 50%;
-  width: 0%;
-  background: radial-gradient(rgba(90, 190, 255, 0.7) 30%, transparent 70%);
-  border-radius: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  -webkit-animation: touchButton infinite ease-out 2s 1s;
-          animation: touchButton infinite ease-out 2s 1s;
+
+a + a {
+  margin-top: 20px;
 }
 
 a {
