@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flyer test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/css/style.css">
+</head>
+
+<body>
+    <div id="flyer">
+        <div class="touch"></div>
+
+        <div class="volet center" onclick="moveCenter()">
+            <div class="face back">
+                <img src="images/bande2.jpg">
+            </div>
+            <div class="face front">
+                <img src="images/bande5.jpg">
+            </div>
+        </div>
+
+        <div class="volet right" onclick="moveRight()">
+            <div class="face back">
+                <img src="images/bande6.jpg">
+            </div>
+            <div class="face front">
+                <img src="images/bande1.jpg">
+            </div>
+        </div>
+
+        <div class="volet left" onclick="moveLeft()">
+            <div class="face back">
+                <img src="images/bande4.jpg">
+            </div>
+            <div class="face front">
+                <img src="images/bande3.jpg">
+            </div>
+        </div>
+    </div>
+
+    <img src="images/1.pdf" alt="">
+
+    <a href="#">Télécharger</a>
+
+    <script>
+        const test = document.querySelector('flip-carp-inner')
+
+    </script>
+
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>

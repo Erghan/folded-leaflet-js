@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 60px 0;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 1400px;
+          perspective: 1400px;
+}
+
+#flyer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  aspect-ratio: 29.7/21;
+  width: 95%;
+  max-width: 1200px;
+  -webkit-transform: rotateX(50deg);
+          transform: rotateX(50deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform ease 1s;
+  transition: -webkit-transform ease 1s;
+  transition: transform ease 1s;
+  transition: transform ease 1s, -webkit-transform ease 1s;
+}
+#flyer .volet {
+  position: absolute;
+  width: 33.333334%;
+  height: 100%;
+  cursor: pointer;
+  -webkit-transform: rotateY(0deg);
+          transform: rotateY(0deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform ease 1s;
+  transition: -webkit-transform ease 1s;
+  transition: transform ease 1s;
+  transition: transform ease 1s, -webkit-transform ease 1s;
+}
+#flyer .volet .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  pointer-events: none;
+}
+#flyer .volet .face img {
+  width: 100%;
+  height: 100%;
+}
+#flyer .volet .face.back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+#flyer .volet.left {
+  z-index: 3;
+  -webkit-transform-origin: left;
+          transform-origin: left;
+}
+#flyer .volet.center {
+  z-index: 1;
+  -webkit-box-shadow: 0 45px 50px -10px rgba(0, 0, 0, 0.7);
+          box-shadow: 0 45px 50px -10px rgba(0, 0, 0, 0.7);
+  -webkit-transition: -webkit-box-shadow ease 1.3s, -webkit-transform ease 1s;
+  transition: -webkit-box-shadow ease 1.3s, -webkit-transform ease 1s;
+  transition: box-shadow ease 1.3s, transform ease 1s;
+  transition: box-shadow ease 1.3s, transform ease 1s, -webkit-box-shadow ease 1.3s, -webkit-transform ease 1s;
+}
+#flyer .volet.right {
+  z-index: 2;
+  -webkit-transform-origin: right;
+          transform-origin: right;
+}
+@-webkit-keyframes touchButton {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 600%;
+  }
+}
+@keyframes touchButton {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 600%;
+  }
+}
+#flyer .touch {
+  z-index: 99;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+}
+#flyer .touch::before {
+  z-index: -1;
+  content: "";
+  display: block;
+  position: absolute;
+  aspect-ratio: 1/1;
+  top: 50%;
+  left: 50%;
+  width: 0%;
+  background: radial-gradient(rgba(90, 190, 255, 0.7) 30%, transparent 70%);
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: touchButton infinite ease-out 2s;
+          animation: touchButton infinite ease-out 2s;
+}
+#flyer .touch::after {
+  z-index: -1;
+  content: "";
+  display: block;
+  position: absolute;
+  aspect-ratio: 1/1;
+  top: 50%;
+  left: 50%;
+  width: 0%;
+  background: radial-gradient(rgba(90, 190, 255, 0.7) 30%, transparent 70%);
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: touchButton infinite ease-out 2s 1s;
+          animation: touchButton infinite ease-out 2s 1s;
+}
+
+a {
+  display: block;
+  margin-top: 80px;
+  padding: 5px 20px;
+  background-color: #000;
+  border: 3px solid #000;
+  border-radius: 99px;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+  -webkit-box-shadow: 2px 5px 15px rgba(0, 0, 0, 0);
+          box-shadow: 2px 5px 15px rgba(0, 0, 0, 0);
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  -webkit-transition: ease 0.4s;
+  transition: ease 0.4s;
+}
+a:hover {
+  background-color: #fff;
+  color: #000;
+  -webkit-box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.7);
+          box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.7);
+  -webkit-transform: translate(0, -6px) scale(1.05);
+          transform: translate(0, -6px) scale(1.05);
+}
