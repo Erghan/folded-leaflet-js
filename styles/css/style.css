@@ -31,13 +31,13 @@ body {
           perspective: 1400px;
 }
 
-#flyerZone {
+#leafletContainer {
   width: 95%;
   max-width: 1200px;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
-#flyerZone #flyer {
+#leafletContainer #leaflet {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,7 +59,7 @@ body {
   transition: transform ease 1s;
   transition: transform ease 1s, -webkit-transform ease 1s;
 }
-#flyerZone #flyer .volet {
+#leafletContainer #leaflet .flap {
   position: absolute;
   width: 33.333334%;
   height: 100%;
@@ -73,7 +73,7 @@ body {
   transition: transform ease 1s;
   transition: transform ease 1s, -webkit-transform ease 1s;
 }
-#flyerZone #flyer .volet .face {
+#leafletContainer #leaflet .flap .side {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -81,19 +81,19 @@ body {
           backface-visibility: hidden;
   pointer-events: none;
 }
-#flyerZone #flyer .volet .face img {
+#leafletContainer #leaflet .flap .side img {
   width: 100%;
   height: 100%;
 }
-#flyerZone #flyer .volet .face.back {
+#leafletContainer #leaflet .flap .side.back {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
-#flyerZone #flyer .volet.left {
+#leafletContainer #leaflet .flap.left {
   -webkit-transform-origin: left;
           transform-origin: left;
 }
-#flyerZone #flyer .volet.center {
+#leafletContainer #leaflet .flap.center {
   -webkit-box-shadow: 0 45px 50px -10px rgba(0, 0, 0, 0.7);
           box-shadow: 0 45px 50px -10px rgba(0, 0, 0, 0.7);
   -webkit-transition: -webkit-box-shadow ease 1.3s, -webkit-transform ease 1s;
@@ -101,12 +101,12 @@ body {
   transition: box-shadow ease 1.3s, transform ease 1s;
   transition: box-shadow ease 1.3s, transform ease 1s, -webkit-box-shadow ease 1.3s, -webkit-transform ease 1s;
 }
-#flyerZone #flyer .volet.right {
+#leafletContainer #leaflet .flap.right {
   -webkit-transform-origin: right;
           transform-origin: right;
 }
 
-.conseil {
+.advice {
   z-index: 99999;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -122,15 +122,17 @@ body {
       -ms-flex-align: center;
           align-items: center;
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.8);
   cursor: pointer;
   -webkit-transform: translateZ(400px);
           transform: translateZ(400px);
   overflow: hidden;
 }
-.conseil p + p {
+.advice p + p {
   margin-top: 20px;
 }
 
@@ -162,4 +164,31 @@ a:hover {
           box-shadow: 2px 5px 15px rgba(0, 0, 0, 0.7);
   -webkit-transform: translate(0, -6px) scale(1.05);
           transform: translate(0, -6px) scale(1.05);
+}
+
+.githubLink {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  margin-top: 100px;
+}
+.githubLink svg {
+  width: 100%;
+  max-width: 100px;
+  height: 100px;
+}
+.githubLink svg path {
+  fill: #fff;
+  -webkit-transition: fill ease 0.4s;
+  transition: fill ease 0.4s;
+}
+.githubLink:hover svg path {
+  fill: #1B1F23;
 }

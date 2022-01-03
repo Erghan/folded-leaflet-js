@@ -1,9 +1,10 @@
-const flyerZone = document.querySelector('#flyerZone')
-const flyer = document.querySelector('#flyer')
-const conseil = document.querySelector('.conseil')
-const voletLeft = document.querySelectorAll('.volet.left')
-const voletCenter = document.querySelector('.volet.center')
-const voletRight = document.querySelectorAll('.volet.right')
+const body = document.querySelector('body')
+const leafletContainer = document.querySelector('#leafletContainer')
+const leaflet = document.querySelector('#leaflet')
+const advice = document.querySelector('.advice')
+const flapLeft = document.querySelectorAll('.flap.left')
+const flapCenter = document.querySelector('.flap.center')
+const flapRight = document.querySelectorAll('.flap.right')
 
 var centerStatus = 0
 var leftStatus = 0
@@ -11,35 +12,37 @@ var rightStatus = 0
 
 onFocus()
 offFocus()
-// flyer.style.transform = "rotateX(0deg)"
 
-function conseilDisable() {
-    conseil.style.opacity = "0"
-    conseil.style.transition = "opacity ease 0.5s"
+body.style.overflowY = "hidden"
 
+function adviceDisable() {
+    advice.style.opacity = "0"
+    advice.style.transition = "opacity ease 0.5s"
+    
     setTimeout(() => {
-        conseil.style.display = "none"
+        advice.style.display = "none"
+        body.style.overflowY = "auto"
     }, 500);
 }
 
 function onFocus() {
-    flyerZone.addEventListener('mouseenter', e => {
-        flyer.style.transform = "rotateX(0deg)"
-        voletCenter.style.boxShadow = "0 5px 20px 0px rgba(0, 0, 0, 0.7)"
+    leafletContainer.addEventListener('mouseenter', e => {
+        leaflet.style.transform = "rotateX(0deg)"
+        flapCenter.style.boxShadow = "0 5px 20px 0px rgba(0, 0, 0, 0.7)"
     })
 }
 
 function offFocus() {
-    flyerZone.addEventListener('mouseleave', e => {
+    leafletContainer.addEventListener('mouseleave', e => {
 
-        flyer.style.transform = "rotateX(50deg)"
-        voletCenter.style.boxShadow = "0 45px 50px -10px rgba(0, 0, 0, 0.7)"
+        leaflet.style.transform = "rotateX(50deg)"
+        flapCenter.style.boxShadow = "0 45px 50px -10px rgba(0, 0, 0, 0.7)"
         centerStatus = 0
 
         if (leftStatus != 0 || rightStatus != 0) {
 
-            voletLeft.forEach(left => {
-                voletRight.forEach(right => {
+            flapLeft.forEach(left => {
+                flapRight.forEach(right => {
 
                     leftStatus = 1.5
                     left.style.transform = "rotateY(-90deg)"
@@ -77,23 +80,23 @@ function offFocus() {
 function moveCenter() {
 
     if (centerStatus == 1) {
-        flyer.style.transform = "rotateY(0deg)"
-        voletCenter.style.boxShadow = "0 5px 20px 0px rgba(0, 0, 0, 0.7)"
+        leaflet.style.transform = "rotateY(0deg)"
+        flapCenter.style.boxShadow = "0 5px 20px 0px rgba(0, 0, 0, 0.7)"
         centerStatus = 0
     } else {
-        flyer.style.transform = "rotateY(180deg)"
-        voletCenter.style.boxShadow = "0 0 0 0 rgba(0, 0, 0, 0)"
+        leaflet.style.transform = "rotateY(180deg)"
+        flapCenter.style.boxShadow = "0 0 0 0 rgba(0, 0, 0, 0)"
         centerStatus = 1
     }
 }
 
 function moveLeft() {
-    voletLeft.forEach(left => {
-        voletRight.forEach(right => {
+    flapLeft.forEach(left => {
+        flapRight.forEach(right => {
 
             if (centerStatus == 1) {
-                flyer.style.transform = "rotateY(0deg)"
-                voletCenter.style.boxShadow = "0 5px 20px 0px rgba(0, 0, 0, 0.7)"
+                leaflet.style.transform = "rotateY(0deg)"
+                flapCenter.style.boxShadow = "0 5px 20px 0px rgba(0, 0, 0, 0.7)"
                 centerStatus = 0
             }
 
@@ -141,12 +144,12 @@ function moveLeft() {
 
 function moveRight() {
 
-    voletLeft.forEach(left => {
-        voletRight.forEach(right => {
+    flapLeft.forEach(left => {
+        flapRight.forEach(right => {
 
             if (centerStatus == 1) {
-                flyer.style.transform = "rotateY(0deg)"
-                voletCenter.style.boxShadow = "0 5px 20px 0px rgba(0, 0, 0, 0.7)"
+                leaflet.style.transform = "rotateY(0deg)"
+                flapCenter.style.boxShadow = "0 5px 20px 0px rgba(0, 0, 0, 0.7)"
                 centerStatus = 0
             }
 
