@@ -1,5 +1,5 @@
 # folded-leaflet.js
 
-A simple interactive folded leaflet with javascript.
+A simple interactive folded leaflet three flap with javascript.
 
-Currently doesn't work properly on Firefox and Safari.
+Check the demo <a target="_blank" href="https://mathieu-funfrock.com/folded-leaflet">here</a>.
