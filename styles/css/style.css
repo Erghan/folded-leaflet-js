@@ -31,7 +31,13 @@ body {
           perspective: 1400px;
 }
 
-#flyer {
+#flyerZone {
+  width: 95%;
+  max-width: 1200px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+#flyerZone #flyer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -43,8 +49,7 @@ body {
           align-items: center;
   position: relative;
   aspect-ratio: 29.7/21;
-  width: 95%;
-  max-width: 1200px;
+  width: 100%;
   -webkit-transform: rotateX(50deg);
           transform: rotateX(50deg);
   -webkit-transform-style: preserve-3d;
@@ -54,7 +59,7 @@ body {
   transition: transform ease 1s;
   transition: transform ease 1s, -webkit-transform ease 1s;
 }
-#flyer .volet {
+#flyerZone #flyer .volet {
   position: absolute;
   width: 33.333334%;
   height: 100%;
@@ -68,7 +73,7 @@ body {
   transition: transform ease 1s;
   transition: transform ease 1s, -webkit-transform ease 1s;
 }
-#flyer .volet .face {
+#flyerZone #flyer .volet .face {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -76,19 +81,19 @@ body {
           backface-visibility: hidden;
   pointer-events: none;
 }
-#flyer .volet .face img {
+#flyerZone #flyer .volet .face img {
   width: 100%;
   height: 100%;
 }
-#flyer .volet .face.back {
+#flyerZone #flyer .volet .face.back {
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
-#flyer .volet.left {
+#flyerZone #flyer .volet.left {
   -webkit-transform-origin: left;
           transform-origin: left;
 }
-#flyer .volet.center {
+#flyerZone #flyer .volet.center {
   -webkit-box-shadow: 0 45px 50px -10px rgba(0, 0, 0, 0.7);
           box-shadow: 0 45px 50px -10px rgba(0, 0, 0, 0.7);
   -webkit-transition: -webkit-box-shadow ease 1.3s, -webkit-transform ease 1s;
@@ -96,13 +101,13 @@ body {
   transition: box-shadow ease 1.3s, transform ease 1s;
   transition: box-shadow ease 1.3s, transform ease 1s, -webkit-box-shadow ease 1.3s, -webkit-transform ease 1s;
 }
-#flyer .volet.right {
+#flyerZone #flyer .volet.right {
   -webkit-transform-origin: right;
           transform-origin: right;
 }
 
 .conseil {
-  z-index: 999;
+  z-index: 99999;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -118,10 +123,12 @@ body {
           align-items: center;
   position: absolute;
   width: 100%;
-  height: 100%;
-  font-size: 20px;
+  height: 100vh;
   background: rgba(255, 255, 255, 0.7);
   cursor: pointer;
+  -webkit-transform: translateZ(400px);
+          transform: translateZ(400px);
+  overflow: hidden;
 }
 .conseil p + p {
   margin-top: 20px;

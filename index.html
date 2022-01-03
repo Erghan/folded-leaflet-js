@@ -11,31 +11,33 @@
 </head>
 
 <body>
-    <div id="flyer">
-        <div class="volet center" onclick="moveCenter()">
-            <div class="face back">
-                <img src="images/bande2.jpg">
+    <div id="flyerZone">
+        <div id="flyer">
+            <div class="volet center" onclick="moveCenter()">
+                <div class="face front">
+                    <img src="images/bande5.jpg">
+                </div>
+                <div class="face back">
+                    <img src="images/bande2.jpg">
+                </div>
             </div>
-            <div class="face front">
-                <img src="images/bande5.jpg">
+    
+            <div class="volet right" onclick="moveRight()">
+                <div class="face front">
+                    <img src="images/bande1.jpg">
+                </div>
+                <div class="face back">
+                    <img src="images/bande6.jpg">
+                </div>
             </div>
-        </div>
-
-        <div class="volet right" onclick="moveRight()">
-            <div class="face back">
-                <img src="images/bande6.jpg">
-            </div>
-            <div class="face front">
-                <img src="images/bande1.jpg">
-            </div>
-        </div>
-
-        <div class="volet left" onclick="moveLeft()">
-            <div class="face back">
-                <img src="images/bande4.jpg">
-            </div>
-            <div class="face front">
-                <img src="images/bande3.jpg">
+    
+            <div class="volet left" onclick="moveLeft()">
+                <div class="face front">
+                    <img src="images/bande3.jpg">
+                </div>
+                <div class="face back">
+                    <img src="images/bande4.jpg">
+                </div>
             </div>
         </div>
     </div>
